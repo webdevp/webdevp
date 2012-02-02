@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+ <meta name="description" content="Sliding Background Image Menu with jQuery" />
+ <meta name="keywords" content="jquery, background image, image, menu, navigation, panels" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/sbimenu.css" />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=News+Cycle&v1' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="home.css" />
+<title>Welcome To Music World
+</title>
+</head>
+<ul id="menu">
+<li><a href="home.html" title="">HOME</a></li>
+<li><a href="PAGE_bolly.html" title="">BOLLYWOOD</a></li>
+<li><a href="PAGE_artist.html" title="">ARTISTS</a></li>
+<li><a href="PAGE_gazal.html" title="">GAZALS</a></li>
+<li><a href="PAGE_regional.html" title="">REGIONAL</a></li>
+<li><a href="PAGE_latest.html" title="">LATEST HITS</a></li>
+</ul>
+</div>
+
+<div id="date">
+<iframe src="http://free.timeanddate.com/clock/i2yjdz9a/n1038/tlin/fn12/fs18/fcfff/tc22d/ftb/bls0/brs0/bts4/btc00b" frameborder="0" width="98" height="25"></iframe>
+</div>  
+
+		<div class="container">
+			<div class="header">
+				<h1>Welcome to Music World</h1>
+				</div>
+
+			<div class="content">
+				<div id="sbi_container" class="sbi_container">
+					<div class="sbi_panel" data-bg="images/1.jpg">
+						<a href="home.html" class="sbi_label">HOME</a>
+									
+					</div>
+					<div class="sbi_panel" data-bg="images/2.jpg">
+						<a href="PAGE_bolly.html" class="sbi_label">BOLLYWOOD</a>
+								
+					</div>
+					<div class="sbi_panel" data-bg="images/3.jpg">
+						<a href="PAGE_artist.html" class="sbi_label">ARTISTS</a>
+							
+					</div>
+					<div class="sbi_panel" data-bg="images/4.jpg">
+						<a href="PAGE_gazal.html" class="sbi_label">GAZALS</a>
+								
+					</div>
+					<div class="sbi_panel" data-bg="images/5.jpg">
+						<a href="PAGE_regional" class="sbi_label">REGIONAL</a>
+						
+					</div>
+					<div class="sbi_panel" data-bg="images/6.jpg">
+						<a href="PAGE_latest" class="sbi_label">LATEST HITS</a>
+						
+					<div class="sbi_panel" data-bg="images/7.jpg">
+						<a href="#" class="sbi_label">ABOUT US</a>
+						
+					</div>
+					<div class="sbi_panel" data-bg="images/8.jpg">
+						<a href="#" class="sbi_label"></a>
+						
+					</div>
+				</div>
+			</div>			
+		</div>                    
+
+<input type="text" id="ip">
+<input type="button" value="SEARCH" id="search" onclick="addr()">
+
+
+<img src="img2.gif" id="img2">
+
+<div id=about>Copyright &copy MusicWorld2011
+</div>
+<audio controls="controls" autoplay=true loop=true id="ad" class="adio">
+<source src="1.mp3" type="audio/mpeg" />
+</audio>
+<input type="button" value="<< ShufFlE >>" id="bt" onclick="changemusic()">
+
+<script type="text/javascript">
+var t=1;
+var c=1;
+var adr;
+function changemusic()
+{
+	c=c+1;
+	if(c>20)
+	{
+		c=1;
+	}
+	
+	document.getElementById("ad").src=c+".mp3";
+	document.getElementById("ad").autostart=true;
+
+}
+function addr()
+{
+	adr=document.getElementById("ip").value;
+	location="http://www.google.co.in/#sclient=psy-ab&hl=en&source=hp&q="+adr+"&psj=1&oq=helloworld&aq=f&aqi=g10&aql=&gs_sm=e&gs_upl=11896l13622l1l13772l8l8l1l3l3l0l156l552l0.4l4l0&bav=on.2,or.r_gc.r_pw.,cf.osb&fp=3dc4491039270b5a&biw=1366&bih=667"
+}
+
+</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.bgImageMenu.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#sbi_container').bgImageMenu({
+					defaultBg	: 'images/default.jpg',
+					menuSpeed	: 300,
+					border		: 1,
+					type		: {
+						mode		: 'verticalSlideAlt',
+						speed		: 450,
+						easing		: 'easeOutBack'
+					}
+				});
+			});
+		</script>
+</html>
